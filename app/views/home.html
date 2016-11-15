@@ -1,11 +1,21 @@
 {% extends "base.html" %}
-
 {% block content %}
-  <div class="page-header">
-    <h1>Tervetuloa Tsoha Bootstrappiin!</h1>
-  </div>
+  <h1>Tervetuloa! Katsellaksesi sisältöä, kirjaudu sisään.</h1>
 
-  <p>
-    <a href="http://tsoha.github.io" class="btn btn-primary btn-lg">Tutustu materiaaliin <span class="glyphicon glyphicon-chevron-right"></span></a>
-  </p>
+  <!-- Kaikki lomakkeen elementit form-tagin sisään -->
+  <form>
+    <!-- Tekstikenttä käyttäjätunnukselle -->
+    <div class="form-group">
+      <label>Käyttäjätunnus</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <!-- Salasanakenttä salasanalle -->
+    <div class="form-group">
+      <label>Salasana</label>
+      <input type="password" class="form-control">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Kirjaudu sisään</button>
+  </form>
 {% endblock %}

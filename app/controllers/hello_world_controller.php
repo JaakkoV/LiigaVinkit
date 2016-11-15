@@ -7,9 +7,19 @@
    	//echo 'Tämä on etusivu!';  
         View::make('home.html');
     }
+    public static function muokkaus(){
+      // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
+   	//echo 'Tämä on etusivu!';  
+        View::make('users_tools.html');
+    }
+    public static function listaus(){
+      // make-metodi renderöi app/views-kansiossa sijaitsevia tiedostoja
+   	//echo 'Tämä on etusivu!';  
+        View::make('users_own_view.html');
+    }
 
     public static function sandbox(){
       // Testaa koodiasi täällä
-      View::make('users_tools.html');
+      View::make('users_own_view.html');
     }
   }
