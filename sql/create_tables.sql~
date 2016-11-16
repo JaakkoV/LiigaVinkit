@@ -1,3 +1,4 @@
+CREATE DATABASE  IF NOT EXISTS liiga
 USE liiga;
 
 CREATE TABLE `AktiivinenKokoonpano` (

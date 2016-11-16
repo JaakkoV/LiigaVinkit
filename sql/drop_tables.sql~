@@ -1,4 +1,3 @@
-USE liiga;
 DROP TABLE IF EXISTS `AktiivinenKokoonpano` CASCADE;
 DROP TABLE IF EXISTS `Joukkue` CASCADE;
 DROP TABLE IF EXISTS `Kausitilastot` CASCADE;
