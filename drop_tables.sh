@@ -6,7 +6,7 @@ echo "Poistetaan tietokantataulut..."
 
 ssh $USERNAME@users.cs.helsinki.fi "
 cd htdocs/$PROJECT_FOLDER/sql
-mysql -uroot -p < drop_tables.sql
+mysql -uroot -pIOfvaLu < drop_tables.sql
 exit"
 
 echo "Valmis!"

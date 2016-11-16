@@ -1,1 +1,0 @@
-INSERT INTO `liiga`.`Pelaajat` (`pelaajaTunnus`, `joukkueid`, `etunimi`, `sukunimi`, `kausi`, `pelipaikka`, `syntymaaika`, `maila`, `paino`, `pituus`) VALUES ('22222', '3', 'Aku', 'Ankka', '2090-2091', 'MV', '1900-01-02', 'L', '33', '120');
