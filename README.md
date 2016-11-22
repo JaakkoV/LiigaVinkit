@@ -6,7 +6,6 @@ Dokumentaatio:
 
 Sovellus:
 * [Linkki etusivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/) / Dummy (3. viikon tilanne)
-* [Linkki muokkaus-sivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/muokkaus) / Dummy (3. vkon tilanne)
 * [Linkki listaus-sivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/pelaajat) / Hakee tietokannasta (3. vkon tilanne)
 * [Linkki yksittäisen pelaajan tietoihin](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/pelaaja/16112) / Hakee tietokannasta id:n perusteella (16112-16119) (3. vkon tilanne)
 
