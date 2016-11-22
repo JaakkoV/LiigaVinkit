@@ -1,0 +1,4 @@
+INSERT INTO `liiga`.`Pelaajat` (`pelaajaTunnus`, `joukkueid`, `etunimi`, `sukunimi`, `kausi`, `pelipaikka`, `syntymaaika`, `maila`, `paino`, `pituus`) VALUES ('22222', '3', 'Aku', 'Ankka', '2090-2091', 'MV', '1900-01-02', 'L', '33', '120');
+INSERT INTO `liiga`.`Pelaajat` (`pelaajaTunnus`, `joukkueid`, `etunimi`, `sukunimi`, `kausi`, `pelipaikka`, `syntymaaika`, `maila`, `paino`, `pituus`) VALUES ('2233', '3', 'Akku', 'Akka', '2090-2091', 'MV', '1900-01-02', 'L', '33', '120');
+INSERT INTO `liiga`.`Pelaajat` (`pelaajaTunnus`, `joukkueid`, `etunimi`, `sukunimi`, `kausi`, `pelipaikka`, `syntymaaika`, `maila`, `paino`, `pituus`) VALUES ('222', '3', 'Au', 'Ankka', '2090-2091', 'MV', '1900-01-02', 'L', '33', '120');
+INSERT INTO `liiga`.`Pelaajat` (`pelaajaTunnus`, `joukkueid`, `etunimi`, `sukunimi`, `kausi`, `pelipaikka`, `syntymaaika`, `maila`, `paino`, `pituus`) VALUES ('2222', '3', 'ku', 'kka', '2090-2091', 'MV', '1900-01-02', 'L', '33', '120');
