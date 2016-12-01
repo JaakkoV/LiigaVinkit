@@ -1,3 +1,4 @@
+
 {% extends "base.html" %}
 {% block content %}
 <h1>{{pelaaja.etunimi}} {{pelaaja.sukunimi}}</h1>
@@ -16,5 +17,10 @@
         <th>Syntymäaika:</th>
         <td>{{pelaaja.dob}}</td>
     </tr>
+    <tr>
+        <th>Kuva:</th>
+        <td><img src="{{pelaaja.linkki()}}"></td>
+    </tr>
+    
 </table>
 {% endblock %}

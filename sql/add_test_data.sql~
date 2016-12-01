@@ -1,7 +1,0 @@
-USE liiga;
-
-LOCK TABLES `Joukkueet` WRITE;
-/* LISÄTÄÄN JOUKKUEDATA */;
-INSERT INTO `Joukkueet` VALUES (1,'Blues'),(2,'FoPS'),(3,'HIFK'),(4,'Hockey'),(5,'HPK'),(6,'Ilves'),(7,'Jokerit'),(8,'JoKP'),(9,'Jukurit'),(10,'JYP'),(11,'JyP HT'),(12,'KalPa'),(13,'Kiekko-Espoo'),(14,'Kiekkoreipas'),(15,'KOO-VEE'),(16,'KooKoo'),(17,'Kärpät'),(18,'Lukko'),(19,'Pelicans'),(20,'Peliitat'),(21,'Reipas'),(22,'SaiPa'),(23,'Sport'),(24,'Tappara'),(25,'TPS'),(26,'TPS'),(27,'TuTo'),(28,'Ässät');
-
-

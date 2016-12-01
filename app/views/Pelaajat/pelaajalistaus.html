@@ -9,8 +9,7 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <th>Etunimi</th>
-            <th>Sukunimi</th>
+            <th>Nimi</th>
             <th>Joukkue</th>
             <th>Pelipaikka</th>
             <th>Syntymäaika</th>
@@ -20,8 +19,7 @@
     <tbody>
         {% for pelaaja in pelaajat %}
         <tr>
-            <td>{{pelaaja.etunimi}}</td>
-            <td>{{pelaaja.sukunimi}}</td>
+            <td><strong><a href="/liigaVinkit/pelaaja/{{pelaaja.pelaajaTunnus}}">{{pelaaja.sukunimi}}, {{pelaaja.etunimi}}</a></strong></td>
             <td>{{pelaaja.joukkue}}</td>
             <td>{{pelaaja.pelipaikka}}</td>
             <td>{{pelaaja.dob}}</td>
