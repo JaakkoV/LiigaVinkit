@@ -24,6 +24,15 @@
         KayttajaKontrolleri::kayttajanSeuraamat($idKayttaja);
   });
   
+  
+        $routes->post('/lisaaSeurantaan', function() {
+           KayttajaKontrolleri::tallennaPelaajaSeurantaan();
+  });
+  
+        $routes->get('/lomake', function() {
+           KayttajaKontrolleri::lisaysLomake();
+  });
+  
     $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
   });
