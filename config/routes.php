@@ -16,6 +16,14 @@
         PelaajaKontrolleri::index();
   });
   
+      $routes->get('/kayttajat', function() {
+        KayttajaKontrolleri::index();
+  });
+
+      $routes->get('/kayttajanSeuratut/:idKayttaja', function($idKayttaja) {
+        KayttajaKontrolleri::kayttajanSeuraamat($idKayttaja);
+  });
+  
     $routes->get('/hiekkalaatikko', function() {
     HelloWorldController::sandbox();
   });
