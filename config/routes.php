@@ -1,4 +1,7 @@
 <?php
+$routes->get('/', function() {
+    HelloWorldController::index();
+});
 
 $routes->get('/pelaaja/:id', function($id) {
     PelaajaKontrolleri::show($id);
