@@ -19,7 +19,7 @@
         
         public static function tallennaPelaajaSeurantaan() {
             $params = $_POST;
-            $uusiSeurattava = new UusiSeurattava(array(
+            $uusiSeurattava = new Seurattava(array(
                 'kayttajaId' => $params['kayttajaId'],
                 'pelaajaTunnus' => $params['pelaajaTunnus'],
                 'alkupvm' => $params['alkupvm'],
