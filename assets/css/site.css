@@ -1,10 +1,117 @@
 #main-container{
-  max-width: 1200px;
-  padding: 10px 25px;
-  margin: 0px auto;
+    max-width: 1200px;
+    padding: 10px 25px;
+    margin: 0px auto;
 }
 
 .navbar .container-fluid{
-  max-width: 1200px;
-  margin: 0px auto;
+    max-width: 1200px;
+    margin: 0px auto;
 }
+
+
+#shooting-map {
+    position: relative;
+}
+.inside {
+    position: relative;
+    > img {
+        position: absolute;
+        z-index: 2;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        filter: alpha(opacity=30);
+        -moz-opacity: 0.3;
+        -khtml-opacity: 0.3;
+        opacity: 0.3;
+        width: 12%;
+        top: 39%;
+        &.shooting-home {
+            left: 23%;
+        }
+        &.shooting-away {
+            right: 23%;
+        }
+    }
+    h2 {
+        text-align: center;
+        padding: 12px 0;
+    }
+}
+
+.shooting-map-container {
+    margin-top: 20px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+div.shot div.away{
+    position: absolute;
+    width: 2.0%;
+    height: 4.1%;
+    opacity: 0.8;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: transparent url(/liigaVinkit/assets/pics/vieras.png) 0 0 no-repeat;
+    background-size: 100%;
+    z-index: 5;
+}
+div.shot {
+    position: absolute;
+    width: 2.0%;
+    height: 4.1%;
+    opacity: 0.8;
+    cursor: pointer;
+    box-sizing: border-box;
+    background: transparent url(/liigaVinkit/assets/pics/koti.png) 0 0 no-repeat;
+    background-size: 100%;
+    z-index: 5;
+}
+div.shot.event-goal {
+    background: transparent url(/liigaVinkit/assets/pics/kotimaali.png) 0 0 no-repeat;
+    background-size: 100%;
+    opacity: 0.9;
+}
+div.shot.away {
+    background: transparent url(/liigaVinkit/assets/pics/vieras.png) 0 0 no-repeat;
+    background-size: 100%;
+}
+div.shot.away.event-goal {
+    background: transparent url(/liigaVinkit/assets/pics/vierasmaali.png) 0 0 no-repeat;
+    background-size: 100%;
+    opacity: 1.0;
+}
+
+
+.shot-tooltip {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    border: solid 1px black;
+    border-radius: 5px;
+    color: black;
+    padding: 0.5em;
+}
+
+.shooting-map-legend ul {
+    list-style: none;
+    list-style-type: none;
+    list-style-position: initial;
+    list-style-image: initial;
+    display: inline-block;
+    padding: 0;
+}
+.shooting-map-legend img{
+    display: inline-block;
+    padding:0;
+    list-style: none;
+    width: 15px;
+    vertical-align:left;
+}
+
