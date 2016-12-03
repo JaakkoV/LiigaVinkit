@@ -34,3 +34,7 @@ $routes->get('/muokkauslomake', function() {
 $routes->get('/lomake', function() {
     SeurattujenKontrolleri::lisaysLomake();
 });
+
+$routes->get('/kentta', function() {
+    KenttaKontrolleri::index();
+});

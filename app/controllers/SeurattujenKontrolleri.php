@@ -15,7 +15,7 @@ class SeurattujenKontrolleri extends BaseController {
             'loppupvm' => $params['loppupvm']
         ));
 
-        $uusiSeurattava->tallennaPelaajaSeurantaan();
+        $seurattava->tallennaPelaajaSeurantaan();
 
         Redirect::to('/kayttajanSeuratut/' . $params['kayttajaId']);
     }

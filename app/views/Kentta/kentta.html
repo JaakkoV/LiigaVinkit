@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content-wrapper">
+    <div id="shooting-map">
+        <div class="inside">
+            <!--<img class="shooting-home" src="/media/team-logos/SM-Liiga-Logot_0004_HIFK_1.png.125x125_q85.png">
+            <img class="shooting-away" src="/media/team-logos/SM-Liiga-Logot_0012_Karpat_AGDUuMu.png.125x125_q85.png">-->
+            <div class="shooting-map-container">
+                <img class="map-background" src="{{base_path}}/assets/pics/jaakiekkokaukalo.png">
+                <div class="shot home period-1 event-miss player-24242404" data-tooltipid="267961" style="top: 33.0195%; left: 66.7734%; display: block;"></div>
+                <div class="shot-tooltip tooltip-267961" style="top:37.019455252918284%; right:33.2265625%; ">
+                    Laukoja: Juhamatti Aaltonen<br>
+                    Joukkue: HIFK<br>
+                    Aika: 02:56<br>
+                    Laukaus ohi maalin
+                </div>
+        </div>
+        <!--<div class="shooting-map-types">
+            <button data-event="goal" class="event event-goal button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> Maali </button>
+            <button data-event="miss" class="event event-miss button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> Ohi </button>
+            <button data-event="save" class="event event-save button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> Torjuttu </button>
+            <button data-event="block" class="event event-block button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> Blokattu </button>
+        </div>
+        <div class="shooting-map-periods">
+            <button data-period="1" class="period period-1 button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> 1. erä </button>
+            <button data-period="2" class="period period-2 button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> 2. erä </button>
+            <button data-period="3" class="period period-3 button checked"><div class="icon-container"><i class="fa fa-check-square-o check"></i><i class="fa fa-square-o uncheck"></i></div> 3. erä </button>
+        </div>
+        <div class="shooting-map-players">
+            <div class="select" style="display: inline-block; width: 280px; vertical-align: middle">
+                <select name="shooting-player-filter">
+                    <option value="">Kaikki pelaajat</option>
+                    <optgroup label="HIFK">
+                        <option value="24242404">
+                            #50 Aaltonen, Juhamatti
+                        </option>
+                    </optgroup>
+                </select>
+            </div>
+        </div> -->
+        <div class="shooting-map-legend">
+            <ul>
+                <li><img src="{{base_path}}/assets/pics/koti.png"> Kotijoukkueen laukaus</li>
+                <li><img src="{{base_path}}/assets/pics/kotimaali.png"> Kotijoukkueen maali</li>
+                <li><img src="{{base_path}}/assets/pics/vieras.png"> Vierasjoukkueen laukaus</li>
+                <li><img src="{{base_path}}/assets/pics/vierasmaali.png"> Vierasjoukkueen maali</li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
