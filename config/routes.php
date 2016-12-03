@@ -36,5 +36,5 @@ $routes->get('/lomake', function() {
 });
 
 $routes->get('/kentta', function() {
-    KenttaKontrolleri::index();
+    LaukausKontrolleri::index();
 });
