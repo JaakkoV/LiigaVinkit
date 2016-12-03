@@ -8,7 +8,7 @@
             <div class="shooting-map-container">
                 <img class="map-background" src="{{base_path}}/assets/pics/jaakiekkokaukalo.png">
                 {% for laukaus in laukaisut %}
-                <div class="shot {{laukaus.event}}" data-tooltipid="267961" style="top: {{laukaus.top}}%; left: {{laukaus.lefty}}%;"></div>
+                <div class="shot {{laukaus.event}} {{laukaus.isHome()}}" data-tooltipid="267961" style="top: {{laukaus.top}}%; left: {{laukaus.lefty}}%;"></div>
                 {% endfor %}
                 
                 <div class="shot-tooltip tooltip-267961" style="top:37.019455252918284%; right:33.2265625%; ">
