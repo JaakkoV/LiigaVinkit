@@ -20,21 +20,26 @@ $routes->get('/kayttajanSeuratut/:idKayttaja', function($idKayttaja) {
 });
 
 $routes->post('/lisaaSeurantaan', function() {
-    SeurattujenKontrolleri::tallennaPelaajaSeurantaan();
+    KayttajanPelaajienKontrolleri::tallennaPelaajaSeurantaan();
 });
 
 $routes->post('/muokkaa', function() {
-    SeurattujenKontrolleri::muokkaa();
+    KayttajanPelaajienKontrolleri::muokkaa();
 });
 
 $routes->get('/muokkauslomake', function() {
-    SeurattujenKontrolleri::muokkausLomake();
+    KayttajanPelaajienKontrolleri::muokkausLomake();
 });
 
 $routes->get('/lomake', function() {
-    SeurattujenKontrolleri::lisaysLomake();
+    KayttajanPelaajienKontrolleri::lisaysLomake();
 });
 
 $routes->get('/kentta', function() {
     LaukausKontrolleri::index();
+});
+
+
+$routes->get('/pelaajanLaukaukset/:pelaajaTunnus', function($pelaajaTunnus) {
+    LaukausKontrolleri::find($pelaajaTunnus);
 });

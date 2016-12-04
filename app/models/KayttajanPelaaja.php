@@ -1,6 +1,6 @@
 <?php
 
-class Seurattava extends BaseModel {
+class KayttajanPelaaja extends BaseModel {
 
     public $idKayttajanPelaajat, $kayttajaId, $pelaajaTunnus, $alkupvm, $loppupvm;
 

@@ -1,6 +1,6 @@
 <?php
 
-class SeurattujenKontrolleri extends BaseController {
+class KayttajanPelaajienKontrolleri extends BaseController {
 
     public static function lisaysLomake() {
         View::make('/Kayttaja/uusiPelaajaSeurantaan.html');
@@ -8,7 +8,7 @@ class SeurattujenKontrolleri extends BaseController {
 
     public static function tallennaPelaajaSeurantaan() {
         $params = $_POST;
-        $seurattava = new Seurattava(array(
+        $seurattava = new KayttajanPelaaja(array(
             'kayttajaId' => $params['kayttajaId'],
             'pelaajaTunnus' => $params['pelaajaTunnus'],
             'alkupvm' => $params['alkupvm'],
@@ -27,7 +27,7 @@ class SeurattujenKontrolleri extends BaseController {
     public static function muokkaa() {
         $params = $_POST;
 
-        $seurattava = new Seurattava(array(
+        $seurattava = new KayttajanPelaaja(array(
             'kayttajaId' => $params['kayttajaId'],
             'pelaajaTunnus' => $params['pelaajaTunnus'],
             'loppupvm' => $params['loppupvm']

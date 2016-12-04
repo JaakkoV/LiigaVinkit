@@ -7,9 +7,9 @@
             View::make('/Kentta/kentta.html', array('laukaisut' => $laukaisut));
         }
         
-        public static function show($id) {
-            $pelaaja = Pelaaja::find($id);
-            View::make('/Pelaajat/pelaajatiedot.html', array('pelaaja' => $pelaaja));
+        public static function find($pelaajaTunnus) {
+            $pelaajanLaukaisut = Laukaus::find($pelaajaTunnus);
+            View::make('/Kentta/kentta.html', array('laukaisut' => $pelaajanLaukaisut));
         }
         
     }
