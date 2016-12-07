@@ -6,9 +6,15 @@ Dokumentaatio:
 
 Sovellus:
 * [Linkki etusivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/) Dummy
-* [Linkki listaus-sivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/pelaajat) / Hakee tietokannasta
-* [Linkki yksittäisen pelaajan tietoihin](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/pelaaja/27684548) / Hakee tietokannasta pelaajaTunnuksen:n perusteella tai linkkiä klikkaamalla pelaajalistauksen sivulta  
-* [Linkki laukaisukarttaan] (http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/kentta) / renderöi kaikki kannassa olevat laukaukset kartalle
+* Kirjautumiseen voi käyttää seuraavia tunnuksia (useampia tulevaisuuden käyttäjäryhmien testausta varten)
+
+| käyttäjätunnus| salasana      | ryhmä |
+| ------------- |:-------------:| -----:|
+| nicki         | 123           |   3   |
+| nacki         | 321           |   2   |
+| kuka          |               |   0   |
+
+Kirjautuneella käyttäjällä on eri näkymät kuin kirjautumattomalla.
 
 ## Työn aihe
 Työssä toteutan työkalun jääkiekko-otteluiden laukaisukartan esittämiseen. Käyttäjä voi valita haluamiensa kriteerien mukaan esitettävät laukaisut koordinaatteina jääkiekkokaukalossa.
@@ -27,4 +33,4 @@ Otan työlleni uuden suunnan ja supistan toteutusta saadakseni paremman fokuksen
 Rakensin työni tuhkasta uuteen muotoon
 
 ### Viikko 5
-Olen tyytyväinen viime viikkoiseen Feeniks-linnun nousuun ja työ etenee kohtuullista vauhtia maalia kohti. Hieman kirittävää kaikkien kriteerien toteuttamiseen, mutta homma luistaa ok.
+Olen tyytyväinen viime viikkoiseen Feeniks-linnun nousuun ja työ etenee kohtuullista vauhtia maalia kohti. Hieman kirittävää kaikkien kriteerien toteuttamiseen, mutta homma luistaa ok. Työssä alkaa olla melkein kaikki palaset paikoillaan ja pääsen keskittymään koodin siistimiseen, muutamien toiminnallisuuksien lisäämiseen, sekä dokumentaation loppuun kirjoittamiseen.
