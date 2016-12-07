@@ -5,7 +5,7 @@ Dokumentaatio:
 * [Linkki dokumentaatiooni](https://github.com/JaakkoV/Tsoha-Bootstrap/blob/master/doc/Tietokantasovelluksendokumentaatio.pdf) / Työn aihetta viilattu melko rajusti kolmannella viikolla. Dokumentaatio ajan tasalla kohtaan 5 asti (07.12.2016)
 
 Sovellus:
-* [Linkki etusivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/) Dummy
+* [Linkki etusivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/)
 * Kirjautumiseen voi käyttää seuraavia tunnuksia (useampia tulevaisuuden käyttäjäryhmien testausta varten)
 
 | käyttäjätunnus| salasana      | ryhmä |
