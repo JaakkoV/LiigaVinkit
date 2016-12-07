@@ -48,7 +48,7 @@ class Pelaaja extends BaseModel {
                 'maila' => $row['maila'],
                 'paino' => $row['paino'],
                 'pituus' => $row['pituus'],
-                'joukkue' => $row['nimi']
+                'joukkueNimi' => $row['nimi']
             ));
             return $pelaaja;
         }

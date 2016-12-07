@@ -5,7 +5,7 @@ CREATE TABLE `Joukkueet` (
   `nimi` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`idJoukkueet`),
   UNIQUE KEY `idJoukkueet_UNIQUE` (`idJoukkueet`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Joukkueiden id:t ja nimet';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Joukkueiden id:t ja nimet';
 
 CREATE TABLE `Laukaisut` (
   `idLaukaisut` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -19,7 +19,7 @@ CREATE TABLE `Laukaisut` (
   `event` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idLaukaisut`),
   UNIQUE KEY `idLaukaisut_UNIQUE` (`idLaukaisut`)
-) ENGINE=InnoDB AUTO_INCREMENT=429 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `Ottelut` (
   `idOttelut` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -30,7 +30,7 @@ CREATE TABLE `Ottelut` (
   `yleiso` int(5) DEFAULT NULL,
   PRIMARY KEY (`idOttelut`),
   UNIQUE KEY `idOttelut_UNIQUE` (`idOttelut`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `PelaajanJoukkueet` (
   `idPelaajanJoukkueet` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -40,7 +40,7 @@ CREATE TABLE `PelaajanJoukkueet` (
   `loppupvm` date DEFAULT '2100-01-01',
   PRIMARY KEY (`idPelaajanJoukkueet`),
   UNIQUE KEY `idPelaajanJoukkueet_UNIQUE` (`idPelaajanJoukkueet`)
-) ENGINE=InnoDB AUTO_INCREMENT=467 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Liitostaulu Pelaajat|Joukkueet valille. Pelaajan joukkueet ovat listattuna tahan tauluun aikaleimoilla. Pelaajalla voi olla monta joukkuetta ja joukkueilla monta pelaajaa. ';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Liitostaulu Pelaajat|Joukkueet valille. Pelaajan joukkueet ovat listattuna tahan tauluun aikaleimoilla. Pelaajalla voi olla monta joukkuetta ja joukkueilla monta pelaajaa. ';
 
 CREATE TABLE `Pelaajat` (
   `idPelaajat` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -56,7 +56,7 @@ CREATE TABLE `Pelaajat` (
   `pituus` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`idPelaajat`),
   UNIQUE KEY `idPelaajat_UNIQUE` (`idPelaajat`)
-) ENGINE=InnoDB AUTO_INCREMENT=931 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Pelaajan perustiedot';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Pelaajan perustiedot';
 
 CREATE TABLE `Kayttaja` (
   `idKayttaja` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -64,9 +64,11 @@ CREATE TABLE `Kayttaja` (
   `etunimi` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `sukunimi` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `salasana` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `kayttajaryhma` tinyint(3) unsigned DEFAULT '0',
   PRIMARY KEY (`idKayttaja`),
   UNIQUE KEY `idKayttaja_UNIQUE` (`idKayttaja`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Kayttajan tiedot\n';
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Kayttajan tiedot\n';
 
 
 CREATE TABLE `KayttajanPelaajat` (
@@ -77,6 +79,6 @@ CREATE TABLE `KayttajanPelaajat` (
   `loppupvm` date DEFAULT NULL,
   PRIMARY KEY (`idKayttajanPelaajat`),
   UNIQUE KEY `idKayttajanPelaajat_UNIQUE` (`idKayttajanPelaajat`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 

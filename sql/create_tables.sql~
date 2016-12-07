@@ -12,13 +12,14 @@ CREATE TABLE `Laukaisut` (
   `pelaajaTunnus` int(10) unsigned NOT NULL,
   `top` double DEFAULT NULL,
   `lefty` double DEFAULT NULL,
-  `ottelu` int(10) unsigned NOT NULL,
+  `otteluTunnus` int(10) unsigned NOT NULL,
   `joukkue` tinyint(4) DEFAULT NULL,
   `aika` time DEFAULT NULL,
   `tulos` varchar(45) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `event` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idLaukaisut`),
   UNIQUE KEY `idLaukaisut_UNIQUE` (`idLaukaisut`)
-) ENGINE=InnoDB AUTO_INCREMENT=180 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=429 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE `Ottelut` (
   `idOttelut` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -63,6 +64,8 @@ CREATE TABLE `Kayttaja` (
   `etunimi` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `sukunimi` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `salasana` varchar(45) COLLATE utf8_unicode_ci NOT NULL,
+  `kayttajaryhma` tinyint(3) unsigned DEFAULT '0',
   PRIMARY KEY (`idKayttaja`),
   UNIQUE KEY `idKayttaja_UNIQUE` (`idKayttaja`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='Kayttajan tiedot\n';

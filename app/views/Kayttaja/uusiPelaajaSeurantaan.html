@@ -4,8 +4,7 @@
 
 <form method="post" action="{{base_path}}/lisaaSeurantaan">
     <div class="form-group">
-        <label>kayttajaId</label>
-        <input type="text" name="kayttajaId" class="form-control">
+        <input type="hidden" name="kayttajaId" value="{{user_logged_in.idKayttaja}}">
     </div>
 
     <div class="form-group">
