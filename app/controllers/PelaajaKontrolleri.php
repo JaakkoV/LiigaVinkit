@@ -8,7 +8,7 @@
         }
         
         public static function show($id) {
-            $pelaaja = Pelaaja::find($id);
+            $pelaaja = Pelaaja::getPelaaja($id);
             View::make('/Pelaajat/pelaajatiedot.html', array('pelaaja' => $pelaaja));
         }
         

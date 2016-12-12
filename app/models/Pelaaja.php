@@ -9,7 +9,7 @@ class Pelaaja extends BaseModel {
     }
 
     public static function all() {
-        $query = DB::connection()->prepare('SELECT * FROM Pelaajat p JOIN PelaajanJoukkueet pj ON p.pelaajaTunnus = pj.pelaajaTunnus JOIN Joukkueet j ON pj.joukkueid = j.idJoukkueet ORDER BY j.nimi DESC');
+        $query = DB::connection()->prepare('SELECT * FROM Pelaajat p JOIN PelaajanJoukkueet pj ON p.pelaajaTunnus = pj.pelaajaTunnus JOIN Joukkueet j ON pj.joukkueid = j.idJoukkueet ORDER BY p.sukunimi ASC');
         $query->execute();
         $rows = $query->fetchAll();
         $pelaajat = array();
@@ -33,7 +33,7 @@ class Pelaaja extends BaseModel {
         return $pelaajat;
     }
 
-    public static function find($pelaajaTunnus) {
+    public static function getPelaaja($pelaajaTunnus) {
         $query = DB::connection()->prepare('SELECT * FROM Pelaajat p JOIN PelaajanJoukkueet pj ON p.pelaajaTunnus = pj.pelaajaTunnus JOIN Joukkueet j ON pj.joukkueid = j.idJoukkueet WHERE p.pelaajaTunnus = :pelaajaTunnus LIMIT 1');
         $query->execute(array('pelaajaTunnus' => $pelaajaTunnus));
         $row = $query->fetch();
@@ -57,6 +57,22 @@ class Pelaaja extends BaseModel {
 
     public function linkki() {
         return strtolower("http://liiga.fi/media/players/" . $this->joukkueNimi . "/" . $this->pelaajaTunnus . "-" . $this->sukunimi . "-" . $this->etunimi . ".png");
+    }
+
+    public function getPelaajanLaukaustenLkm() {
+        $pelaajanLaukaisut = new Laukaus(array(
+            'pelaajaTunnus' => $this->pelaajaTunnus
+        ));
+        $pelaajanLaukaisut = $pelaajanLaukaisut->getLaukauksetByPelaaja($this->pelaajaTunnus);
+        return sizeof($pelaajanLaukaisut);
+    }
+
+    public function getPelaajanLaukaukset() {
+        $pelaajanLaukaisut = new Laukaus(array(
+            'pelaajaTunnus' => $this->pelaajaTunnus
+        ));
+        $pelaajanLaukaisut = $pelaajanLaukaisut->getLaukauksetByPelaaja($this->pelaajaTunnus);
+        return $pelaajanLaukaisut;
     }
 
 }

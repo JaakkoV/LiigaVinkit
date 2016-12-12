@@ -7,22 +7,32 @@
 </p>
 
 <table class="table table-striped table-bordered">
-    <thead>
+<thead>
         <tr>
-            <th>Nimi</th>
+            <th>Pelaajatunnus</th>
+            <th>Etunimi</th>
             <th>Joukkue</th>
             <th>Pelipaikka</th>
             <th>Syntymäaika</th>
+            <th>Maila</th>
+            <th>Paino</th>
+            <th>Pituus</th>
+            <th>Laukaukset</th>
         </tr>
     </thead>
 
     <tbody>
         {% for pelaaja in pelaajat %}
         <tr>
+            <td width="50">{{pelaaja.pelaajaTunnus}}</td>
             <td><strong><a href="{{base_path}}/pelaaja/{{pelaaja.pelaajaTunnus}}">{{pelaaja.sukunimi}}, {{pelaaja.etunimi}}</a></strong></td>
-            <td>{{pelaaja.joukkueNimi}}</td>
-            <td>{{pelaaja.pelipaikka}}</td>
-            <td>{{pelaaja.dob}}</td>
+            <td width="50">{{pelaaja.joukkueNimi}}</td>
+            <td width="50">{{pelaaja.pelipaikka}}</td>
+            <td width="50">{{pelaaja.dob}}</td>
+            <td width="30">{{pelaaja.maila}}</td>
+            <td width="30">{{pelaaja.paino}}</td>
+            <td width="30">{{pelaaja.pituus}}</td>
+            <td width="50" align="center">{{pelaaja.getPelaajanLaukaustenLkm()}}</td>
         </tr>
         {% endfor %}
     </tbody>

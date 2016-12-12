@@ -69,6 +69,10 @@ $routes->get('/logout', function() {
     KayttajaKontrolleri::logout();
 });
 
-function check_logged_in(){
+function check_logged_in() {
     BaseController::check_logged_in();
 }
+
+$routes->get('/ottelut', function() {
+    OtteluKontrolleri::getAll();
+});

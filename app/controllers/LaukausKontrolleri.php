@@ -8,8 +8,8 @@
         }
         
         public static function find($pelaajaTunnus) {
-            $pelaajanLaukaisut = Laukaus::find($pelaajaTunnus);
-            View::make('/Kentta/kentta.html', array('laukaisut' => $pelaajanLaukaisut));
+            $pelaajanLaukaisut = Laukaus::getLaukauksetByPelaaja($pelaajaTunnus);
+            View::make('/Makrot/kentta.html', array('laukaisut' => $pelaajanLaukaisut));
         }
         
     }
