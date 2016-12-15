@@ -34,7 +34,7 @@ class Laukaus extends BaseModel {
     }
 
     public function isHome() {
-        # palauttaa kotijoukkueen, toiminnallisuus on toteutettu laukausten piirtoa kentälle varten
+        # palauttaa koti- /vierasjoukkueen, toiminnallisuus on toteutettu laukausten piirtoa kentälle varten
         if ($this->isHome == '1') {
             return 'home';
         }
