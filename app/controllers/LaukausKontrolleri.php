@@ -1,15 +1,13 @@
 <?php
 
-    class LaukausKontrolleri extends BaseController{
-        
-        public static function index(){
-            $laukaisut = Laukaus::all();
-            View::make('/Kentta/kentta.html', array('laukaisut' => $laukaisut));
-        }
-        
-        public static function find($pelaajaTunnus) {
-            $pelaajanLaukaisut = Laukaus::getLaukauksetByPelaaja($pelaajaTunnus);
-            View::make('/Makrot/kentta.html', array('laukaisut' => $pelaajanLaukaisut));
-        }
-        
+class LaukausKontrolleri extends BaseController {
+
+    public static function index() {
+        $goal = Laukaus::all('event-goal');
+        $save = Laukaus::all('event-save');
+        $miss = Laukaus::all('event-miss');
+        $block = Laukaus::all('event-block');
+        View::make('/Kentta/kentta.html', array('goal' => $goal, 'save' => $save, 'miss' => $miss, 'block' => $block));
     }
+
+}

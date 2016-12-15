@@ -1,0 +1,12 @@
+{% import "Makrot/kentta.html" as kentta %}
+{% extends "base.html" %}
+{% block content %}
+<div class="page-header"><h1>Kaikki Maalit</h1></div>
+{{kentta.kentta(goal)}}
+<div class="page-header"><h1>Kaikki Torjunnat</h1></div>
+{{kentta.kentta(save)}}
+<div class="page-header"><h1>Kaikki Ohilaukaukset</h1></div>
+{{kentta.kentta(miss)}}
+<div class="page-header"><h1>Kaikki Blokkaukset</h1></div>
+{{kentta.kentta(block)}}
+{% endblock %}

@@ -1,26 +1,70 @@
 {% import "Makrot/kentta.html" as kentta %}
+{% import "Makrot/forms.html" as nappi %}
 {% extends "base.html" %}
 {% block content %}
-<h1>{{pelaaja.etunimi}} {{pelaaja.sukunimi}}</h1>
+<div class="page-header">
+    <h1>{{pelaaja.etunimi}} {{pelaaja.sukunimi}}</h1>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <table class="table table-striped table-bordered" style="width: 100%">
+            <tr>
+                <th>Joukkue:</th>
+                <td>{{pelaaja.joukkueNimi}}</td>
+            </tr>
+            <tr>
+                <th>Pelipaikka:</th>
+                <td>{{pelaaja.pelipaikka}}</td>
+            </tr>
+            <tr>
+                <th>Syntymäaika:</th>
+                <td>{{pelaaja.dob}}</td>
+            </tr>
+            <tr>
+                <th rowspan="3">Kuva:</th>
+                <td rowspan="3"><img src="{{pelaaja.linkki()}}"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-4">
+        <table class="table table-striped table-bordered" style="width: 100%">
+            <tr>
+                <th colspan ="2" style="text-align: center">Pelaajan Tilastot</th>
+            </tr>
+            <tr>
+                <th>Laukaukset</th>
+                <td style="text-align: center">{{pelaaja.getPelaajanLaukaustenLkm()}}</td>
+            </tr>
+            <tr>
+                <th>Maalit</th>
+                <td style="text-align: center">{{pelaaja.getPelaajanLaukaustenLkm('event-goal')}}</td>
+            </tr>
+            <tr>
+                <th>Torjutut</th>
+                <td style="text-align: center">{{pelaaja.getPelaajanLaukaustenLkm('event-save')}}</td>
+            </tr>
+            <tr>
+                <th>Blokatut</th>
+                <td style="text-align: center">{{pelaaja.getPelaajanLaukaustenLkm('event-block')}}</td>
+            </tr>
+            <tr>
+                <th>Ohi</th>
+                <td style="text-align: center">{{pelaaja.getPelaajanLaukaustenLkm('event-miss')}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+{% if pelaaja.onkoKirjautuneenSeurannassa(pelaaja.pelaajaTunnus) %}
+<h2>Poista pelaaja seurannastasi</h2>
+{{nappi.poista("#{base_path}/poistaSeurannasta/#{pelaaja.pelaajaTunnus}", 'Poista Seurannasta')}}
+<h2>Muokkaa pelaajan seurantaa</h2>
+{{nappi.muokkaa_lisaa_seurantaan("#{base_path}/muokkaa/", "#{pelaaja.pelaajaTunnus}", 'Muokkaa')}}
+{% else %}
+<h2>Ala seuraamaan tätä pelaajaa</h2>
+{{nappi.muokkaa_lisaa_seurantaan("#{base_path}/lisaaSeurantaan/", "#{pelaaja.pelaajaTunnus}", 'Lisää')}}
+{% endif %}
 
-    <table class="table table-striped table-bordered" style="width: 20%">
-        <tr>
-            <th>Joukkue:</th>
-            <td>{{pelaaja.joukkueNimi}}</td>
-        </tr>
-        <tr>
-            <th>Pelipaikka:</th>
-            <td>{{pelaaja.pelipaikka}}</td>
-        </tr>
-        <tr>
-            <th>Syntymäaika:</th>
-            <td>{{pelaaja.dob}}</td>
-        </tr>
-        <tr>
-            <th>Kuva:</th>
-            <td><img src="{{pelaaja.linkki()}}"></td>
-        </tr>
-    </table>
-    {{kentta.kentta("#{pelaaja.getPelaajanLaukaukset()}")}}
+<h2>Pelaajan laukaukset järjestelmässä</h2>
+{{kentta.kentta("#{pelaaja.getPelaajanLaukaukset()}")}}
 </body>
 {% endblock %}

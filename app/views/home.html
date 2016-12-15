@@ -1,9 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Tervetuloa! Katsellaksesi sisältöä, kirjaudu sisään.</h1>
 
-{% if user_logged_in %}
-  <h2>Kirjautunut käyttäjä : {{user_logged_in.kayttajatunnus}}</h2>
+{% if not user_logged_in %}
+<h1>Tervetuloa! Katsellaksesi sisältöä, kirjaudu sisään.</h1>
+{% else %}
+<h1>Kirjautunut käyttäjä: {{user_logged_in.kayttajatunnus}} </h1>
 {% endif %}
-  {{message}}
+
+{% if message %}
+<h3>{{message}}</h3>
+{% endif %}
+{% if img %}
+<div class="col-sm-8">
+<img src="{{base_path}}{{img}}">
+</div>
+{% endif %}
 {% endblock %}
+

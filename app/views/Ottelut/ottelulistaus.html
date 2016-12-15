@@ -5,48 +5,21 @@
 <table class="table table-striped table-bordered" data-name="taulu">
     <thead>
         <tr>
-            <th>Ottelutunnus</th>
+            <th style="text-align: center">Ottelutunnus</th>
             <th>Päivämäärä</th>
             <th>Kotijoukkue</th>
             <th>Vierasjoukkue</th>
             <th>Yleisöä</th>
-            <th colspan ="5" text-align:center>Kotijoukkueen laukaukset</th>
-            <th colspan ="5" text-align:center>Vierasjoukkueen laukaukset</th>
-        </tr>
-        <tr>
-            <th colspan ="5"></th>
-            <th>Ohi</th>
-            <th>Blokkaus</th>
-            <th>Torjunta</th>
-            <th>Maali</th>
-            <th>Yhteensä</th>
-            <th>Ohi</th>
-            <th>Blokkaus</th>
-            <th>Torjunta</th>
-            <th>Maali</th>            
-            <th>Yhteensä</th>
         </tr>
     </thead>
-
     <tbody>
-
         {% for ottelu in ottelut %}
         <tr>
-            <td width="30">{{ottelu.otteluTunnus}}</td>
+            <td width="20" style="text-align: center"><strong><a href="{{base_path}}/ottelutiedot/{{ottelu.otteluTunnus}}">{{ottelu.otteluTunnus}}</a></strong></td>
             <td width="30" >{{ottelu.pvm}}</td>
             <td width="50">{{ottelu.kotijoukkueNimi}}</td>
             <td width="50">{{ottelu.vierasjoukkueNimi}}</td>
             <td width="30">{{ottelu.yleiso}}</td>
-            <td width="30">{{ottelu.getKotiJoukkueenLaukaustenLkm('event-miss')}}</td>
-            <td width="30">{{ottelu.getKotiJoukkueenLaukaustenLkm('event-block')}}</td>
-            <td width="30">{{ottelu.getKotiJoukkueenLaukaustenLkm('event-save')}}</td>
-            <td width="30">{{ottelu.getKotiJoukkueenLaukaustenLkm('event-goal')}}</td>
-            <td width="30">{{ottelu.getKotiJoukkueenLaukaustenLkm()}}</td>
-            <td width="30">{{ottelu.getVierasJoukkueenLaukaustenLkm('event-miss')}}</td>
-            <td width="30">{{ottelu.getVierasJoukkueenLaukaustenLkm('event-block')}}</td>
-            <td width="30">{{ottelu.getVierasJoukkueenLaukaustenLkm('event-save')}}</td>
-            <td width="30">{{ottelu.getVierasJoukkueenLaukaustenLkm('event-goal')}}</td>
-            <td width="30">{{ottelu.getVierasJoukkueenLaukaustenLkm()}}</td>
         </tr>
         {% endfor %}
     </tbody>

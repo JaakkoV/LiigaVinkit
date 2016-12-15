@@ -8,8 +8,11 @@ class Laukaus extends BaseModel {
         parent::__construct($attributes);
     }
 
-    public static function all() {
-        $query = DB::connection()->prepare('SELECT *, l.joukkue=o.kotijoukkueid as isHome FROM Laukaisut l JOIN Ottelut o ON o.otteluTunnus = l.otteluTunnus LIMIT 1000');
+    public static function all($event='') {
+        $queryString = 'SELECT *, l.joukkue=o.kotijoukkueid as isHome FROM Laukaisut l JOIN Ottelut o ON o.otteluTunnus = l.otteluTunnus';
+        $event= $event==""?" LIMIT 1000":" WHERE l.event = '" . $event . "'";
+        $queryString = $queryString . $event;
+        $query = DB::connection()->prepare($queryString);
         $query->execute();
         $rows = $query->fetchAll();
         $laukaisut = array();
@@ -38,8 +41,11 @@ class Laukaus extends BaseModel {
         return 'away';
     }
 
-    public static function getLaukauksetByPelaaja($pelaajaTunnus) {
-        $query = DB::connection()->prepare('SELECT *, l.joukkue=o.kotijoukkueid as isHome FROM Laukaisut l JOIN Ottelut o ON o.otteluTunnus = l.otteluTunnus WHERE l.pelaajaTunnus = :pelaajaTunnus');
+    public static function getLaukauksetByPelaaja($pelaajaTunnus, $event="") {
+        $queryString = 'SELECT *, l.joukkue=o.kotijoukkueid as isHome FROM Laukaisut l JOIN Ottelut o ON o.otteluTunnus = l.otteluTunnus WHERE l.pelaajaTunnus = :pelaajaTunnus';
+        $event= $event==""?'':" AND l.event = '" . $event . "'";
+        $queryString = $queryString . $event;
+        $query = DB::connection()->prepare($queryString);
         $query->execute(array('pelaajaTunnus' => $pelaajaTunnus));
         $rows = $query->fetchAll();
         $pelaajanLaukaisut = array();
@@ -61,7 +67,7 @@ class Laukaus extends BaseModel {
         return $pelaajanLaukaisut;
     }
 
-    public static function getLaukauksetByTeam($joukkue, $otteluTunnus, $event) {
+    public static function getLaukauksetByTeam($joukkue, $otteluTunnus, $event="") {
         $queryString = 'SELECT *, l.joukkue=o.kotijoukkueid as isHome FROM Laukaisut l JOIN Ottelut o ON o.otteluTunnus = l.otteluTunnus WHERE l.joukkue = :joukkue AND l.otteluTunnus = :otteluTunnus';
         $event= $event==""?'':" AND l.event = '" . $event . "'";
         $queryString = $queryString . $event;
@@ -86,5 +92,31 @@ class Laukaus extends BaseModel {
         }
         return $joukkueenLaukaisut;
     }
+    
+    public static function getLaukauksetByOttelu($otteluTunnus, $event="") {
+        $queryString = 'SELECT *, l.joukkue=o.kotijoukkueid as isHome FROM Laukaisut l JOIN Ottelut o ON o.otteluTunnus = l.otteluTunnus WHERE l.otteluTunnus = :otteluTunnus';
+        $event= $event==""?'':" AND l.event = '" . $event . "'";
+        $queryString = $queryString . $event;
+        $query = DB::connection()->prepare($queryString);
+        $query->execute(array('otteluTunnus' => $otteluTunnus));
+        $rows = $query->fetchAll();
+        $ottelunLaukaukset = array();
 
+        foreach ($rows as $row) {
+            $ottelunLaukaukset[] = new Laukaus(array(
+                'idLaukaisut' => $row['idLaukaisut'],
+                'pelaajaTunnus' => $row['pelaajaTunnus'],
+                'top' => $row['top'],
+                'lefty' => $row['lefty'],
+                'otteluTunnus' => $row['otteluTunnus'],
+                'joukkue' => $row['joukkue'],
+                'aika' => $row['aika'],
+                'tulos' => $row['tulos'],
+                'event' => $row['event'],
+                'isHome' => $row['isHome']
+            ));
+        }
+        return $ottelunLaukaukset;
+    }
+    
 }
