@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-{{message}}
+{% if message %}
+<div class="alert alert-success">
+    {{message}}
+</div>
+{% endif %}
+
+{% if error %}
+<div class="alert alert-danger">
+    {{error}}
+</div>
+{% endif %}
+
 <h1>Tervetuloa! Katsellaksesi sisältöä, kirjaudu sisään.</h1>
 <!-- Kaikki lomakkeen elementit form-tagin sisään -->
 <form method="post" action="{{base_path}}/kirjaudu">

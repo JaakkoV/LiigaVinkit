@@ -10,9 +10,9 @@
         <input type="hidden" name="pelaajaTunnus" value ="{{pelaajaTunnus}}" class="form-control">
     </div>
     <label>Aseta alkupäivämäärä</label>
-    <input type="date" name="alkupvm" min="1980-01-01"><br>
+    <input type="date" name="alkupvm" min="1980-01-01" value="{{params.alkupvm}}"><br>
     <label>Aseta loppupäivämäärä</label>
-    <input type="date" name="loppupvm" min="1980-01-01"><br>
+    <input type="date" name="loppupvm" min="1980-01-01" value="{{params.loppupvm}}"><br>
     <div class="form-group">
         <button type="submit" class="btn btn-success">{{text|default('Poista käyttäjätili!')}}</button>
     </div>

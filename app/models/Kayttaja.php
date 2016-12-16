@@ -6,7 +6,7 @@ class Kayttaja extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
-        $this->validators = array('validate_kayttajaId');
+        $this->validators = array('validate_kayttajatunnus', 'validate_etunimi', 'validate_sukunimi', 'validate_onkoTunnusVapaa', 'validate_email', 'validate_salasana');
     }
 
     public static function all() {
@@ -54,31 +54,19 @@ class Kayttaja extends BaseModel {
         $query->execute(array('kayttajatunnus' => $this->kayttajatunnus));
         $row = $query->fetch();
         if ($row) {
-            return false;
+            return array('Käyttäjätunnus on varattu');
         }
-        return true;
-    }
-
-    public function onkoTarvittavatTiedot() {
-        if (strlen($this->kayttajatunnus) < 3 || strlen($this->etunimi) < 3 || strlen($this->sukunimi) < 3 || strlen($this->email) < 3 || strlen($this->salasana) < 3) {
-            return false;
-        }
-        return true;
+        return array();
     }
 
     public function lisaaKayttaja() {
-        if (self::onkoTunnusVapaa()) {
             $query = DB::connection()->prepare('INSERT INTO Kayttaja(kayttajatunnus, etunimi, sukunimi, email, salasana, kayttajaryhma) VALUES (:kayttajatunnus, :etunimi, :sukunimi, :email, :salasana, 1)');
             $query->execute(array('kayttajatunnus' => $this->kayttajatunnus, 'etunimi' => $this->etunimi, 'sukunimi' => $this->sukunimi, 'email' => $this->email, 'salasana' => $this->salasana));
-            return true;
-        }
-        return false;
     }
 
     public function paivitaKayttaja() {
         $query = DB::connection()->prepare('UPDATE Kayttaja SET etunimi=:etunimi, sukunimi=:sukunimi, email=:email, salasana=:salasana WHERE idKayttaja = :idKayttaja');
         $query->execute(array('etunimi' => $this->etunimi, 'sukunimi' => $this->sukunimi, 'email' => $this->email, 'salasana' => $this->salasana, 'idKayttaja' => $_SESSION['kayttaja']));
-        return true;
     }
 
     public function poistaKayttaja() {
@@ -86,7 +74,7 @@ class Kayttaja extends BaseModel {
         $query->execute(array('idKayttaja' => $_SESSION['kayttaja']));
         return true;
     }
-    
+
     public static function kayttajanSeuraamatPelaajat($idKayttaja) {
         $query = DB::connection()->prepare('SELECT * FROM Kayttaja k JOIN KayttajanPelaajat kp ON k.idKayttaja = kp.kayttajaId JOIN Pelaajat p ON kp.pelaajaTunnus = p.pelaajaTunnus JOIN Joukkueet j ON p.joukkueid = j.idJoukkueet WHERE k.idKayttaja = :idKayttaja');
         $query->execute(array('idKayttaja' => $idKayttaja));
@@ -109,17 +97,6 @@ class Kayttaja extends BaseModel {
             return $pelaajat;
         }
         return null;
-    }
-
-    public function validate_kayttajaId() {
-        $errors = array();
-        if ($this->idKayttaja == '' || $this->idKayttaja = null) {
-            $errors[] = 'kayttajaId ei saa olla tyhjä';
-        }
-        if (is_numeric($this->idKayttaja)) {
-            $errors[] = 'kayttajaId:n pitää olla numeroarvo';
-        }
-        return $errors;
     }
 
     public function authenticate($kayttajatunnus, $salasana) {

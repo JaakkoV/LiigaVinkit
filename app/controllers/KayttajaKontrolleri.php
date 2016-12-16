@@ -30,11 +30,13 @@ class KayttajaKontrolleri extends BaseController {
             'email' => $params['email'],
             'salasana' => $params['salasana']
         ));
-        $kayttaja->onkoTarvittavatTiedot() ? '' : Redirect::to('/rekisteroidy', array('message' => 'Kaikkien kenttien täytyy sisältää vähintään kolme merkkiä'));
-        if ($kayttaja->lisaaKayttaja()) {
+
+        $errors = $kayttaja->errors();
+        if (count($errors) == 0) {
+            $kayttaja->lisaaKayttaja();
             Redirect::to('/kirjaudu', array('message' => 'Tervetuloa palveluun ' . $kayttaja->etunimi . ', nyt voit kirjautua sisään!'));
         } else {
-            Redirect::to('/rekisteroidy', array('message' => 'Rekisteröityminen epäonnistui, kayttajatunnuksesi on varattu. Rekisteröidy toisella tunnuksella.'));
+            View::make('Kayttaja/rekisteroidy.html', array('message' => 'Rekisteröityminen epäonnistui', 'errors' => $errors, 'params' => $params));
         }
     }
 
@@ -43,17 +45,18 @@ class KayttajaKontrolleri extends BaseController {
         $kirjautunutKayttaja = new Kayttaja(array('kayttajaId' => $_SESSION['kayttaja']));
         $kirjautunutKayttaja = $kirjautunutKayttaja->getKayttaja();
         $kayttaja = new Kayttaja(array(
-            'kayttajatunnus' => $kirjautunutKayttaja->kayttajatunnus,
+            'kayttajatunnus' => 'dummytunnusvalidointiavarten',
             'etunimi' => $params['etunimi'],
             'sukunimi' => $params['sukunimi'],
             'email' => $params['email'],
             'salasana' => $params['salasana']
         ));
-        $kayttaja->onkoTarvittavatTiedot() ? '' : Redirect::to('/kayttajatiedot', array('message' => 'Kaikkien kenttien täytyy sisältää vähintään kolme merkkiä'));
-        if ($kayttaja->paivitaKayttaja()) {
+        $errors = $kayttaja->errors();
+        if (count($errors) == 0) {
+            $kayttaja->paivitaKayttaja();
             Redirect::to('/kayttajatiedot', array('message' => 'Tietosi ovat nyt päivitetty ja näkyvät alla'));
         } else {
-            Redirect::to('/kayttajatiedot', array('message' => 'Jotain meni vikaan, yritä uudelleen'));
+            Redirect::to('/kayttajatiedot', array('errors' => $errors));
         }
     }
 

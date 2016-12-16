@@ -6,6 +6,7 @@ class KayttajanPelaaja extends BaseModel {
 
     public function __construct($attributes) {
         parent::__construct($attributes);
+        $this->validators = array('validate_alkupvm', 'validate_loppupvm', 'validate_alkuOltavaPienempiKuinLoppuPvm');
     }
 
     public function getAll() {
