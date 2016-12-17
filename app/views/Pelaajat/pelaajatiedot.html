@@ -68,10 +68,10 @@
 <h2>Poista pelaaja seurannastasi</h2>
 {{nappi.poista("#{base_path}/poistaSeurannasta/#{pelaaja.pelaajaTunnus}", 'Poista Seurannasta')}}
 <h2>Muokkaa pelaajan seurantaa</h2>
-{{nappi.muokkaa_lisaa_seurantaan("#{base_path}/muokkaa/", "#{pelaaja.pelaajaTunnus}", 'Muokkaa')}}
+{{nappi.muokkaa_lisaa_seurantaan("#{base_path}/muokkaa/", "#{pelaaja.pelaajaTunnus}", 'Muokkaa', "#{params}")}}
 {% else %}
 <h2>Ala seuraamaan tätä pelaajaa</h2>
-{{nappi.muokkaa_lisaa_seurantaan("#{base_path}/lisaaSeurantaan/", "#{pelaaja.pelaajaTunnus}", 'Lisää')}}
+{{nappi.muokkaa_lisaa_seurantaan("#{base_path}/lisaaSeurantaan/", "#{pelaaja.pelaajaTunnus}", 'Lisää', "#{params}")}}
 {% endif %}
 
 <h2>Pelaajan laukaukset järjestelmässä</h2>
