@@ -4,7 +4,7 @@
 </form>
 {% endmacro %}
 
-{% macro muokkaa_lisaa_seurantaan(path, pelaajaTunnus, text) %}
+{% macro muokkaa_lisaa_seurantaan(path, pelaajaTunnus, text, params) %}
 <form method="post" action="{{path}}">
     <div class="form-group">
         <input type="hidden" name="pelaajaTunnus" value ="{{pelaajaTunnus}}" class="form-control">
