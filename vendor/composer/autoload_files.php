@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '6bc45d0537e6858fd179bdbc31d62c79' => $vendorDir . '/raveren/kint/Kint.class.php',
+    '35d1e42abf4d8c181ae544a92d8f3f6a' => $vendorDir . '/kint-php/kint/Kint.class.php',
 );

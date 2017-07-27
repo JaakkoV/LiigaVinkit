@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ffca90e958de7e05ca28398e609a041c",
+    "content-hash": "76582dd4b699619dd370cda8efd293ad",
     "packages": [
         {
             "name": "filp/whoops",
@@ -65,23 +65,28 @@
             "time": "2015-06-29T05:42:04+00:00"
         },
         {
-            "name": "raveren/kint",
-            "version": "v0.9",
+            "name": "kint-php/kint",
+            "version": "v0.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/raveren/kint.git",
-                "reference": "ada810111ced4e3a926b4040da9b86442e43b613"
+                "url": "https://github.com/kint-php/kint.git",
+                "reference": "d4780fc6e974f00c427c1fd2492dca4dcd636704"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/raveren/kint/zipball/ada810111ced4e3a926b4040da9b86442e43b613",
-                "reference": "ada810111ced4e3a926b4040da9b86442e43b613",
+                "url": "https://api.github.com/repos/kint-php/kint/zipball/d4780fc6e974f00c427c1fd2492dca4dcd636704",
+                "reference": "d4780fc6e974f00c427c1fd2492dca4dcd636704",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9-dev"
+                }
+            },
             "autoload": {
                 "files": [
                     "Kint.class.php"
@@ -108,8 +113,7 @@
                 "kint",
                 "php"
             ],
-            "abandoned": "kint-php/kint",
-            "time": "2013-08-12T22:46:16+00:00"
+            "time": "2014-08-11T11:44:51+00:00"
         },
         {
             "name": "slim/slim",

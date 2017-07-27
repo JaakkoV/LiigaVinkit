@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit034c802e2a829d2b160e7e862d78ef8a
 {
     public static $files = array (
-        '6bc45d0537e6858fd179bdbc31d62c79' => __DIR__ . '/..' . '/raveren/kint/Kint.class.php',
+        '35d1e42abf4d8c181ae544a92d8f3f6a' => __DIR__ . '/..' . '/kint-php/kint/Kint.class.php',
     );
 
     public static $prefixLengthsPsr4 = array (
