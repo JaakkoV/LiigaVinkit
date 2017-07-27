@@ -1,0 +1,21 @@
+{% macro poista(action, text) %}
+<form method="get" action="{{action}}">
+    <button type="submit" class="btn btn-danger">{{text|default('Poista')}}</button>
+</form>
+{% endmacro %}
+
+{% macro muokkaa_lisaa_seurantaan(path, pelaajaTunnus, text, params) %}
+<form method="post" action="{{path}}">
+    <div class="form-group">
+        <input type="hidden" name="pelaajaTunnus" value ="{{pelaajaTunnus}}" class="form-control">
+    </div>
+    <label>Aseta alkupäivämäärä</label>
+    <input type="date" name="alkupvm" min="1980-01-01" value="{{params.alkupvm}}"><br>
+    <label>Aseta loppupäivämäärä</label>
+    <input type="date" name="loppupvm" min="1980-01-01" value="{{params.loppupvm}}"><br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">{{text|default('Poista käyttäjätili!')}}</button>
+    </div>
+</form>
+{% endmacro %}
+

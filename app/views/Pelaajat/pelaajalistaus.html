@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h1> Kaikki järjestelmässä olevat pelaajat </h1>
+
+<table class="table table-striped table-bordered" data-name="taulu">
+    <thead>
+        <tr>
+            <th>Pelaajatunnus</th>
+            <th>Pelaajan nimi</th>
+            <th>Joukkue</th>
+            <th>Pelipaikka</th>
+            <th>Syntymäaika</th>
+            <th>Maila</th>
+            <th>Paino</th>
+            <th>Pituus</th>
+            <th>Laukaukset</th>
+            <th>Seurannassasi?</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for pelaaja in pelaajat %}
+        <tr>
+            <td width="50">{{pelaaja.pelaajaTunnus}}</td>
+            <td width="250"><strong><a href="{{base_path}}/pelaaja/{{pelaaja.pelaajaTunnus}}">{{pelaaja.sukunimi}}, {{pelaaja.etunimi}}</a></strong></td>
+            <td width="50">{{pelaaja.joukkueNimi}}</td>
+            <td width="50">{{pelaaja.pelipaikka}}</td>
+            <td width="50">{{pelaaja.dob}}</td>
+            <td width="30">{{pelaaja.maila}}</td>
+            <td width="30">{{pelaaja.paino}}</td>
+            <td width="30">{{pelaaja.pituus}}</td>
+            <td width="50" align="center">{{pelaaja.laukaustenLkm}}</td>
+            <td width="30" align="center">{{pelaaja.onkoKirjautuneenSeurannassa(pelaaja.pelaajaTunnus)}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
