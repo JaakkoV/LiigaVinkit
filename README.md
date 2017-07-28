@@ -5,7 +5,7 @@ Dokumentaatio:
 * [Linkki dokumentaatiooni](https://github.com/JaakkoV/Tsoha-Bootstrap/blob/master/doc/Tietokantasovelluksendokumentaatio.pdf)
 
 Sovellus:
-* [Linkki etusivulle](http://jaakvirt.users.cs.helsinki.fi/liigaVinkit/)
+* [Linkki etusivulle](http://liigavinkit.herokuapp.com) EI TOIMI TÄLLÄ HETKELLÄ, siirto herokuun käynnissä (valmistumisesta ei takeita, 28.07.2017 tietokannan pystyttäminen aloitettu)
 * Kirjautumiseen voi käyttää seuraavia tunnuksia (useampia tulevaisuuden käyttäjäryhmien testausta varten).
 
 | käyttäjätunnus| salasana      | ryhmä |
