@@ -9,7 +9,7 @@
   $explode =  explode('/', $script_name);
 
   if($explode[1] == 'index.php'){
-    $base_folder = '.';
+    $base_folder = 'app';
   }else{
     $base_folder = $explode[1];
   }
