@@ -99,7 +99,7 @@ class Kayttaja extends BaseModel {
         return null;
     }
 
-    public function authenticate($kayttajatunnus, $salasana) {
+    public static function authenticate($kayttajatunnus, $salasana) {
         $query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE kayttajatunnus = BINARY :kayttajatunnus AND salasana = BINARY :salasana LIMIT 1');
         $query->execute(array('kayttajatunnus' => $kayttajatunnus, 'salasana' => $salasana));
         $row = $query->fetch();
