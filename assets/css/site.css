@@ -57,7 +57,7 @@ div.shot div.away{
     opacity: 0.8;
     cursor: pointer;
     box-sizing: border-box;
-    background: transparent url(app/assets/pics/vieras.png) 0 0 no-repeat;
+    background: transparent url(/assets/pics/vieras.png) 0 0 no-repeat;
     background-size: 100%;
     z-index: 5;
 }
@@ -68,7 +68,7 @@ div.shot {
     opacity: 0.8;
     cursor: pointer;
     box-sizing: border-box;
-    background: transparent url(/app/assets/pics/koti.png) 0 0 no-repeat;
+    background: transparent url(/assets/pics/koti.png) 0 0 no-repeat;
     background-size: 100%;
     z-index: 5;
 }
