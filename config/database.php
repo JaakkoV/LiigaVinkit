@@ -11,8 +11,10 @@
         'resource' => 'pgsql:'
       ),
       'mysql' => array(
-        'resource' => 'mysql://bc010aef102bb6:72fb1428@us-cdbr-iron-east-05.cleardb.net/heroku_4977b88ee16b95e?reconnect=true',
-      )
+      'user' => 'bc010aef102bb6',
+      'pass' => '72fb1428',
+      'host' => 'us-cdbr-iron-east-05.cleardb.net',
+     )
     );
 
     public static function connection_config(){
