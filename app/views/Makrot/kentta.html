@@ -5,7 +5,7 @@
             <!--<img class="shooting-home" src="/media/team-logos/SM-Liiga-Logot_0004_HIFK_1.png.125x125_q85.png">
             <img class="shooting-away" src="/media/team-logos/SM-Liiga-Logot_0012_Karpat_AGDUuMu.png.125x125_q85.png">-->
             <div class="shooting-map-container">
-                <img class="map-background" src="/liigaVinkit{{base_path}}/assets/pics/jaakiekkokaukalo.png">
+                <img class="map-background" src="/{{base_path}}/assets/pics/jaakiekkokaukalo.png">
                 {% for laukaus in laukaisut %}
                 <div class="shot {{laukaus.event}} {{laukaus.isHome()}}" data-tooltipid="{{laukaus.pelaajaTunnus}}" style="top: {{laukaus.top}}%; left: {{laukaus.lefty}}%;"></div>
                 {% endfor %}
@@ -13,10 +13,10 @@
         </div>
         <div class="shooting-map-legend">
             <ul>
-                <li><img src="/liigaVinkit{{base_path}}/assets/pics/koti.png"> Kotijoukkueen laukaus</li>
-                <li><img src="/liigaVinkit{{base_path}}/assets/pics/kotimaali.png"> Kotijoukkueen maali</li>
-                <li><img src="/liigaVinkit{{base_path}}/assets/pics/vieras.png"> Vierasjoukkueen laukaus</li>
-                <li><img src="/liigaVinkit{{base_path}}/assets/pics/vierasmaali.png"> Vierasjoukkueen maali</li>
+                <li><img src="/{{base_path}}/assets/pics/koti.png"> Kotijoukkueen laukaus</li>
+                <li><img src="/{{base_path}}/assets/pics/kotimaali.png"> Kotijoukkueen maali</li>
+                <li><img src="/{{base_path}}/assets/pics/vieras.png"> Vierasjoukkueen laukaus</li>
+                <li><img src="/{{base_path}}/assets/pics/vierasmaali.png"> Vierasjoukkueen maali</li>
             </ul>
 
         </div>
