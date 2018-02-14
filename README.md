@@ -2,7 +2,7 @@
 
 ## Yleisiä linkkejä:
 Dokumentaatio:
-* [Linkki dokumentaatiooni](https://github.com/JaakkoV/Tsoha-Bootstrap/blob/master/doc/Tietokantasovelluksendokumentaatio.pdf)
+* [Linkki dokumentaatioon](https://github.com/JaakkoV/Tsoha-Bootstrap/blob/master/doc/Tietokantasovelluksendokumentaatio.pdf)
 
 Sovellus:
 * [Linkki etusivulle](http://liigavinkit.herokuapp.com) Toimii hitaahkosti herokun ilmaispalvelussa
