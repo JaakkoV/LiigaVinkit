@@ -9,8 +9,8 @@
 
         try {
             // Alustetaan PDO
-            if(isset($config['username'])){
-              $connection = new PDO($config['resource'], $config['username'], $config['password']);
+            if(isset($config['user'])){
+              $connection = new PDO($config['resource'], $config['user'], $config['pass']);
             }else{
               $connection = new PDO($config['resource']);
             }

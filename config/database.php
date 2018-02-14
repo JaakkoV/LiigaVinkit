@@ -11,9 +11,9 @@
         'resource' => 'pgsql:'
       ),
       'mysql' => array(
-      'user' => 'bc010aef102bb6',
-      'pass' => '72fb1428',
-      'host' => 'us-cdbr-iron-east-05.cleardb.net',
+      'resource' => 'mysql:host=us-cdbr-iron-east-05.cleardb.net;dbname=heroku_4977b88ee16b95e',
+      'user' => 'bc010aef102bb6'
+      'pass' => '72fb1428'
      )
     );
 
