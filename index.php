@@ -1,6 +1,7 @@
 <?php
 
   // Laitetaan virheilmoitukset näkymään
+  // error_reporting(E_ALL);
   error_reporting(E_NONE);
   ini_set('display_errors', '1');
 
